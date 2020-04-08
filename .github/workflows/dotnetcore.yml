@@ -27,4 +27,26 @@ jobs:
       - name: Push generated package to GitHub registry
         run: nuget push out\*.nupkg -Source "GPR" -SkipDuplicate
       
+name: NuGet
 
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # also works with windows-latest and macos-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+    - name: Build with dotnet
+      run: |
+           cd src/IO.Clicksend/
+           dotnet build --configuration Release --version-suffix prerelease-$(date +%Y%m%d%H%M%S)           
+      shell: bash
+    - name: Publish nuget
+      run: |
+           for f in ./*/bin/Release/*.nupkg
+           do
+             curl -vX PUT -u "gbryer:${{ secrets.GPR_TOKEN }}" -F package=@$f https://nuget.pkg.github.com/gbryer/
+           done
+      shell: bash

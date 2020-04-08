@@ -18,7 +18,7 @@ jobs:
       shell: bash
     - name: Publish nuget
       run: |
-           for f in ./*/bin/Release/*.nupkg
+           for f in ./src/*/bin/Release/*.nupkg
            do
              curl -vX PUT -u "gbryer:${{ secrets.GPR_TOKEN }}" -F package=@$f https://nuget.pkg.github.com/gbryer/
            done

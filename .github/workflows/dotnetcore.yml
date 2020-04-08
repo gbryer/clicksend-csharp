@@ -14,7 +14,8 @@ jobs:
       uses: actions/checkout@v1
     - name: Build with dotnet
       run: |
-           cd /src/IO.ClickSend
+           ls
+           cd src/IO.ClickSend/
            dotnet build --configuration Release --version-suffix prerelease-$(date +%Y%m%d%H%M%S)           
       shell: bash
     - name: Publish nuget

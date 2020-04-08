@@ -8,10 +8,10 @@
     <PackageProjectUrl>https://github.com/gbryer/clicksend-csharp</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.6.0" />
+    <PackageReference Include="JsonSubTypes" Version="1.7.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="RestSharp" Version="106.10.1" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 </Project>

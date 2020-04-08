@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <RepositoryUrl>https://github.com/gbryer/clicksend-csharp</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/gbryer/clicksend-csharp</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="1.6.0" />
